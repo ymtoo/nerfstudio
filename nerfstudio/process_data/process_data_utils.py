@@ -25,7 +25,7 @@ from typing import List, Literal, Optional, OrderedDict, Tuple, Union
 import cv2
 import imageio
 import numpy as np
-import rawpy
+# import rawpy
 
 from nerfstudio.utils.rich_utils import CONSOLE, status
 from nerfstudio.utils.scripts import run_command
@@ -258,10 +258,10 @@ def copy_images_list(
             # if CR2 raw, we want to read raw and write RAW_CONVERTED_SUFFIX, and change the file suffix for downstream processing
             if image_path.suffix.lower() in ALLOWED_RAW_EXTS:
                 copied_image_path = image_dir / f"{image_prefix}{idx + 1:05d}{RAW_CONVERTED_SUFFIX}"
-                with rawpy.imread(str(image_path)) as raw:
-                    rgb = raw.postprocess()
-                imageio.imsave(copied_image_path, rgb)
-                image_paths[idx] = copied_image_path
+                # with rawpy.imread(str(image_path)) as raw:
+                #     rgb = raw.postprocess()
+                # imageio.imsave(copied_image_path, rgb)
+                # image_paths[idx] = copied_image_path
             elif same_dimensions:
                 # Fast path; just copy the file
                 shutil.copy(image_path, copied_image_path)
