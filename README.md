@@ -2,7 +2,7 @@
     <!-- community badges -->
     <a href="https://discord.gg/uMbNqcraFc"><img src="https://img.shields.io/badge/Join-Discord-blue.svg"/></a>
     <!-- doc badges -->
-    <a href='https://plenoptix-nerfstudio.readthedocs-hosted.com/en/latest/?badge=latest'>
+    <a href='https://docs.nerf.studio/'>
         <img src='https://readthedocs.com/projects/plenoptix-nerfstudio/badge/?version=latest' alt='Documentation Status' />
     </a>
     <!-- pi package badge -->
@@ -242,15 +242,15 @@ Using an existing dataset is great, but likely you want to use your own data! We
 
 | Data                                                                                                 | Capture Device | Requirements                                                      | `ns-process-data` Speed |
 | ---------------------------------------------------------------------------------------------------- | -------------- | ----------------------------------------------------------------- | ----------------------- |
-| 📷 [Images](https://docs.nerf.studio/en/latest/quickstart/custom_dataset.html#images-and-video)      | Any            | [COLMAP](https://colmap.github.io/install.html)                   | 🐢                      |
-| 📹 [Video](https://docs.nerf.studio/en/latest/quickstart/custom_dataset.html#images-and-video)       | Any            | [COLMAP](https://colmap.github.io/install.html)                   | 🐢                      |
-| 🌎 [360 Data](https://docs.nerf.studio/en/latest/quickstart/custom_dataset.html#360_data)            | Any            | [COLMAP](https://colmap.github.io/install.html)                   | 🐢                      |
-| 📱 [Polycam](https://docs.nerf.studio/en/latest/quickstart/custom_dataset.html#polycam-capture)      | IOS with LiDAR | [Polycam App](https://poly.cam/)                                  | 🐇                      |
-| 📱 [KIRI Engine](https://docs.nerf.studio/en/latest/quickstart/custom_dataset.html#kiri-capture)     | IOS or Android | [KIRI Engine App](https://www.kiriengine.com/)                    | 🐇                      |
-| 📱 [Record3D](https://docs.nerf.studio/en/latest/quickstart/custom_dataset.html#record3d-capture)    | IOS with LiDAR | [Record3D app](https://record3d.app/)                             | 🐇                      |
-| 🖥 [Metashape](https://docs.nerf.studio/en/latest/quickstart/custom_dataset.html#metashape)           | Any            | [Metashape](https://www.agisoft.com/)                             | 🐇                      |
-| 🖥 [RealityCapture](https://docs.nerf.studio/en/latest/quickstart/custom_dataset.html#realitycapture) | Any            | [RealityCapture](https://www.capturingreality.com/realitycapture) | 🐇                      |
-| 🛠 [Custom](https://docs.nerf.studio/en/latest/quickstart/data_conventions.html)                      | Any            | Camera Poses                                                      | 🐇                      |
+| 📷 [Images](https://docs.nerf.studio/quickstart/custom_dataset.html#images-or-video)      | Any            | [COLMAP](https://colmap.github.io/install.html)                   | 🐢                      |
+| 📹 [Video](https://docs.nerf.studio/quickstart/custom_dataset.html#images-or-video)       | Any            | [COLMAP](https://colmap.github.io/install.html)                   | 🐢                      |
+| 🌎 [360 Data](https://docs.nerf.studio/quickstart/custom_dataset.html#data-equirectangular)            | Any            | [COLMAP](https://colmap.github.io/install.html)                   | 🐢                      |
+| 📱 [Polycam](https://docs.nerf.studio/quickstart/custom_dataset.html#polycam-capture)      | IOS with LiDAR | [Polycam App](https://poly.cam/)                                  | 🐇                      |
+| 📱 [KIRI Engine](https://docs.nerf.studio/quickstart/custom_dataset.html#kiri-engine-capture)     | IOS or Android | [KIRI Engine App](https://www.kiriengine.com/)                    | 🐇                      |
+| 📱 [Record3D](https://docs.nerf.studio/quickstart/custom_dataset.html#record3d-capture)    | IOS with LiDAR | [Record3D app](https://record3d.app/)                             | 🐇                      |
+| 🖥 [Metashape](https://docs.nerf.studio/quickstart/custom_dataset.html#metashape)           | Any            | [Metashape](https://www.agisoft.com/)                             | 🐇                      |
+| 🖥 [RealityCapture](https://docs.nerf.studio/quickstart/custom_dataset.html#realitycapture) | Any            | [RealityCapture](https://www.capturingreality.com/realitycapture) | 🐇                      |
+| 🛠 [Custom](https://docs.nerf.studio/quickstart/data_conventions.html)                      | Any            | Camera Poses                                                      | 🐇                      |
 
 ## 5. Advanced Options
 
@@ -274,7 +274,7 @@ ns-train nerfacto --help
 
 ### Tensorboard / WandB / Viewer
 
-We support three different methods to track training progress, using the viewer, [tensorboard](https://www.tensorflow.org/tensorboard), and [Weights and Biases](https://wandb.ai/site). You can specify which visualizer to use by appending `--vis {viewer, tensorboard, wandb, viewer+wandb, viewer+tensorboard}` to the training command. Simultaneously utilizing the viewer alongside wandb or tensorboard may cause stuttering issues during evaluation steps. The viewer only works for methods that are fast (ie. nerfacto, instant-ngp), for slower methods like NeRF, use the other loggers.
+We support four different methods to track training progress, using the viewer[tensorboard](https://www.tensorflow.org/tensorboard), [Weights and Biases](https://wandb.ai/site), and ,[Comet](https://comet.com/?utm_source=nerf&utm_medium=referral&utm_content=github). You can specify which visualizer to use by appending `--vis {viewer, tensorboard, wandb, comet viewer+wandb, viewer+tensorboard, viewer+comet}` to the training command. Simultaneously utilizing the viewer alongside wandb or tensorboard may cause stuttering issues during evaluation steps. The viewer only works for methods that are fast (ie. nerfacto, instant-ngp), for slower methods like NeRF, use the other loggers.
 
 # Learn More
 
